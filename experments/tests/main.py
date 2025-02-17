@@ -7,7 +7,8 @@ import torch
 from minerva.data.datasets.supervised_dataset import SupervisedReconstructionDataset
 from minerva.data.readers.png_reader import PNGReader
 from minerva.data.readers.tiff_reader import TiffReader
-from minerva.models.nets.image.segment_anything.sam_lora import SAMLoRA
+from minerva.models.nets.image.sam import Sam
+from minerva.models.finetune_adapters import LoRA
 from minerva.transforms.transform import _Transform
 from minerva.pipelines.lightning_pipeline import SimpleLightningPipeline
 from torch.utils.data import DataLoader
@@ -18,7 +19,6 @@ import os
 import random
 from scipy.ndimage.interpolation import zoom
 import cv2
-from patchify import patchify
 # from lightning.pytorch.loggers import TensorBoardLogger
 # from matplotlib.colors import ListedColormap
 from tqdm import tqdm
