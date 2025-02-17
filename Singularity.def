@@ -1,0 +1,67 @@
+Bootstrap: docker
+From: nvcr.io/nvidia/pytorch:23.06-py3
+
+%labels
+    Maintainer go_athena
+
+%files
+    # Include file requirements.txt inside image
+    requirements.txt requirements.txt
+    Minerva-Dev /Minerva-Dev
+
+%post
+    # Environment settings
+    export DEBIAN_FRONTEND=noninteractive
+
+    # Update packages and install sytems dependencies
+    apt-get update && apt-get install -y \
+        build-essential \
+        bzip2 \
+        ca-certificates \
+        cmake \
+        curl \
+        git \
+        htop \
+        libssl-dev \
+        nvtop \
+        net-tools \
+        pandoc \
+        python3-sphinx \
+        tmux \
+        tree \
+        unrar \
+        unzip \
+        vim \
+        wget \
+        xdot \
+        opencpn
+
+    # Clean cache to free space
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+    # Update pip and install global packages
+    python -m pip install --upgrade pip setuptools pytest && \
+    python -m pip install \
+        black \
+        ipykernel \
+
+    # Install the Minerva-Devil (aka Minerva-Dev)
+    cd /Minerva-Dev && pip install .
+
+    # Install my packages from requirements.txt
+    cd .. && pip install -r requirements.txt
+    
+%environment
+    # Set environments variables
+    export PATH=/usr/local/bin:$PATH
+    export LC_ALL=C.UTF-8
+    export LANG=C.UTF-8
+
+%post
+    # Change shell to bash
+    chsh --shell /bin/bash
+    
+%runscript
+    # Commands to run when the container starts
+    echo "Make the L"
