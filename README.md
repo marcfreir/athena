@@ -15,8 +15,8 @@
     Make sure rename labels **sam_FAS** to a name that you want (check into **Singularity.def**, because there is a flag called **Maintainer** with the same name).
 6) (optional) You can run singularity image with: 
     - ``` singularity exec --nv Singularity.sif bash ```. 
-    - But, in Ogbon (Petrobras), you need run with Slurm (step 7), SO, BE CAREFUL!
-7) (optional) In Ogbon (Petrobras), execute:
+    - But, in the CLUSTER (the one you are currently using), you need run with Slurm (step 7), SO, BE CAREFUL!
+7) (optional) In the CLUSTER (the one you are currently using), execute:
     - ``` srun --partition gpulongd --account asml-gpu --job-name=go_athena --time 120:00:00 --pty bash ```. 
     - This will open a bash for use Slurm. So, after this, run **step 6)**.
 8) (opcional) If you need run using sbatch, use this: 
@@ -24,7 +24,7 @@
 9) **PS: REMEMBER AWAYS BUID SINGULARITY.SIF**
 
 ## Tips
-- In Ogbon (Petrobras), execute ``` srun --partition gpulongd --account asml-gpu --job-name=NOME_DO_PROJETO_OU_EXPERIMENTO --time 120:00:00 --pty bash ``` for interative bash.
+- In Ogbon (Petrobras), execute ``` srun --partition gpulongd --account asml-gpu --job-name=NAME_OF_PROJECT_OR_EXPERIMENT --time 120:00:00 --pty bash ``` for interative bash.
 - More details, see:
     - https://hpc.senaicimatec.com.br/docs/clusters/job-scheduling/
 
