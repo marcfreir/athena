@@ -1,0 +1,16 @@
+# Container files
+Singularity.sif
+
+# Temp, sandbox, and experiments folders
+experiments/
+/experiments/
+EXPERIMENTS/
+/EXPERIMENTS/
+tmp/
+/tmp/
+TMP/
+/TMP/
+sandbox/
+/sandbox/
+SANDBOX/
+/SANDBOX/

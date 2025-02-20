@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Verificando se a flag --container foi fornecida
+# Verify if flag --container was provided
 if [[ "$1" == "--container" ]]; then
     echo "installing Minerva-Dev..."
     cd Minerva-Dev
