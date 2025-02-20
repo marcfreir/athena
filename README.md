@@ -17,7 +17,7 @@
     - ``` singularity exec --nv Singularity.sif bash ```. 
     - But, in Ogbon (Petrobras), you need run with Slurm (step 7), SO, BE CAREFUL!
 7) (optional) In Ogbon (Petrobras), execute:
-    - ``` srun --partition gpulongd --account asml-gpu --job-name=sam_FAS --time 120:00:00 --pty bash ```. 
+    - ``` srun --partition gpulongd --account asml-gpu --job-name=go_athena --time 120:00:00 --pty bash ```. 
     - This will open a bash for use Slurm. So, after this, run **step 6)**.
 8) (opcional) If you need run using sbatch, use this: 
     - ``` sbatch --output=meu_job.log --error=meu_job.err run_sbatch.sh ```.
